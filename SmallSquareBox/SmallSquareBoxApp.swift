@@ -11,7 +11,7 @@ import SwiftUI
 struct SmallSquareBoxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }
