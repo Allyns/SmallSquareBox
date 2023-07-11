@@ -55,7 +55,7 @@ struct RootView: View{
         
         var title:String{
             switch self{
-            case .view1:return "界面1"
+            case .view1:return "‘小’程序"
             case .view2:return "界面2"
             case .view3:return "界面3"
             case .view4:return "界面4"
