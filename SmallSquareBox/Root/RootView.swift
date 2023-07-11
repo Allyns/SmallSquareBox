@@ -12,7 +12,7 @@ struct RootView: View{
    @State private var selection:Int=0
     
     var body:some View{
-        
+    
         NavigationView{
             TabView(selection: $selection){
                 HomeView1().tabItem{Item(type: .view1, select:selection)}.tag(ItemType.view1.rawValue)
