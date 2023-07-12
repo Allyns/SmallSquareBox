@@ -25,6 +25,7 @@
 		914AD3662A5D43300010DEF5 /* DetailsView05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD3652A5D43300010DEF5 /* DetailsView05.swift */; };
 		914AD3682A5D43380010DEF5 /* DetailsView06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD3672A5D43380010DEF5 /* DetailsView06.swift */; };
 		914AD36A2A5D43420010DEF5 /* DetailsView07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD3692A5D43420010DEF5 /* DetailsView07.swift */; };
+		914AD36D2A5D900F0010DEF5 /* NoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD36C2A5D900F0010DEF5 /* NoteItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		914AD3652A5D43300010DEF5 /* DetailsView05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView05.swift; sourceTree = "<group>"; };
 		914AD3672A5D43380010DEF5 /* DetailsView06.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView06.swift; sourceTree = "<group>"; };
 		914AD3692A5D43420010DEF5 /* DetailsView07.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView07.swift; sourceTree = "<group>"; };
+		914AD36C2A5D900F0010DEF5 /* NoteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,15 +199,24 @@
 		914AD3642A5D42AD0010DEF5 /* DetView */ = {
 			isa = PBXGroup;
 			children = (
+				914AD36B2A5D53490010DEF5 /* Flash note */,
 				914AD3622A5D427F0010DEF5 /* DetailsView04.swift */,
 				914AD3602A5D42740010DEF5 /* DetailsView03.swift */,
 				914AD35E2A5D426A0010DEF5 /* DetailsView02.swift */,
-				914AD35C2A5D31BD0010DEF5 /* detailsView01.swift */,
 				914AD3652A5D43300010DEF5 /* DetailsView05.swift */,
 				914AD3672A5D43380010DEF5 /* DetailsView06.swift */,
 				914AD3692A5D43420010DEF5 /* DetailsView07.swift */,
 			);
 			path = DetView;
+			sourceTree = "<group>";
+		};
+		914AD36B2A5D53490010DEF5 /* Flash note */ = {
+			isa = PBXGroup;
+			children = (
+				914AD35C2A5D31BD0010DEF5 /* detailsView01.swift */,
+				914AD36C2A5D900F0010DEF5 /* NoteItem.swift */,
+			);
+			path = "Flash note";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +359,7 @@
 				914AD3202A5BE8420010DEF5 /* SmallSquareBoxApp.swift in Sources */,
 				914AD34D2A5C252C0010DEF5 /* RootView.swift in Sources */,
 				914AD3612A5D42740010DEF5 /* DetailsView03.swift in Sources */,
+				914AD36D2A5D900F0010DEF5 /* NoteItem.swift in Sources */,
 				914AD3682A5D43380010DEF5 /* DetailsView06.swift in Sources */,
 				914AD3572A5C31660010DEF5 /* HomeView1.swift in Sources */,
 				914AD3552A5C31520010DEF5 /* HomeView2.swift in Sources */,

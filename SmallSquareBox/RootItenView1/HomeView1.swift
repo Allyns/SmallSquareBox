@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView1: View {
-    var itemMsg=[ItemMessage(image: "discover_game", name: "小功能01"),
+    var itemMsg=[ItemMessage(image: "discover_game", name: "闪念笔记"),
                  ItemMessage(image: "discover_miniprogram", name: "功能02"),
                  ItemMessage(image: "discover_moment", name: "功能03"),
                  ItemMessage(image: "discover_nearby", name: "功能04"),
