@@ -11,9 +11,12 @@ struct DetailsView01: View {
     
     @State var searchTeext=""
     
+    
     @State var notItems:[NoteItem]=[
         NoteItem(time: "2023.07.10", title: "笔记标题01", content: "笔记内容01"),
         NoteItem(time: "2023.07.09", title: "笔记标题02", content: "笔记内容02")]
+    
+    @State var showNewNoteView=false
     
     var body: some View {
         NavigationView {
@@ -28,6 +31,8 @@ struct DetailsView01: View {
                 }
                 newDataView()
             }.navigationBarTitle("闪念笔记",displayMode: .inline)
+        }.sheet(isPresented: $showNewNoteView){
+            NewNoteView(showNewNoteView: $showNewNoteView,notItemData: $notItems)
         }
     }
     
@@ -69,7 +74,7 @@ struct DetailsView01: View {
                 Spacer()
                 Button(action:{
                 //点击更多事件响应
-                    
+          
                 }){
                     Image(systemName: "ellipsis")
                         .foregroundColor(.gray)
@@ -131,7 +136,8 @@ struct DetailsView01: View {
             HStack{
                 Spacer()
                 Button(action:{
-                    //执行添加
+                    //弹窗
+                    self.showNewNoteView=true
                 }){
                     //视图
                     Image(systemName: "plus.circle.fill")

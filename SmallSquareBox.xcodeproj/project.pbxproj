@@ -26,6 +26,7 @@
 		914AD3682A5D43380010DEF5 /* DetailsView06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD3672A5D43380010DEF5 /* DetailsView06.swift */; };
 		914AD36A2A5D43420010DEF5 /* DetailsView07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD3692A5D43420010DEF5 /* DetailsView07.swift */; };
 		914AD36D2A5D900F0010DEF5 /* NoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD36C2A5D900F0010DEF5 /* NoteItem.swift */; };
+		914AD36F2A5E52860010DEF5 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD36E2A5E52860010DEF5 /* NewNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		914AD3672A5D43380010DEF5 /* DetailsView06.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView06.swift; sourceTree = "<group>"; };
 		914AD3692A5D43420010DEF5 /* DetailsView07.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView07.swift; sourceTree = "<group>"; };
 		914AD36C2A5D900F0010DEF5 /* NoteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItem.swift; sourceTree = "<group>"; };
+		914AD36E2A5E52860010DEF5 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			children = (
 				914AD35C2A5D31BD0010DEF5 /* detailsView01.swift */,
 				914AD36C2A5D900F0010DEF5 /* NoteItem.swift */,
+				914AD36E2A5E52860010DEF5 /* NewNoteView.swift */,
 			);
 			path = "Flash note";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				914AD36D2A5D900F0010DEF5 /* NoteItem.swift in Sources */,
 				914AD3682A5D43380010DEF5 /* DetailsView06.swift in Sources */,
 				914AD3572A5C31660010DEF5 /* HomeView1.swift in Sources */,
+				914AD36F2A5E52860010DEF5 /* NewNoteView.swift in Sources */,
 				914AD3552A5C31520010DEF5 /* HomeView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
