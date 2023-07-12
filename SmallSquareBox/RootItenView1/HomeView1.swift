@@ -10,11 +10,12 @@ import SwiftUI
 struct HomeView1: View {
     var itemMsg=[ItemMessage(image: "discover_game", name: "闪念笔记(ObservableObject)"),
                  ItemMessage(image: "discover_miniprogram", name: "闪念笔记(MVVM)"),
-                 ItemMessage(image: "discover_moment", name: "功能03"),
-                 ItemMessage(image: "discover_nearby", name: "功能04"),
-                 ItemMessage(image: "discover_qrcode", name: "功能05"),
-                 ItemMessage(image: "discover_search", name: "功能06"),
-                 ItemMessage(image: "discover_see", name: "功能07")]
+                 ItemMessage(image: "discover_moment", name: "倒计时"),
+                 ItemMessage(image: "discover_nearby", name: "每日一句"),
+                 ItemMessage(image: "discover_qrcode", name: "单位转换"),
+                 ItemMessage(image: "discover_search", name: "今天吃什么"),
+                 ItemMessage(image: "discover_see", name: "新国标红绿灯")]
+    
     var body: some View {
         List(itemMsg.indices,id:\.hashValue){index in
             NavigationLink(destination:itemMsg[index].itemView(index:index)){

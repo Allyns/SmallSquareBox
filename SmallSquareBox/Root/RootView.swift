@@ -21,6 +21,7 @@ struct RootView: View{
             HomeView3().tabItem{Item(type: .view3, select: selection)}
                     .tag(ItemType.view3.rawValue)
                 HomeView4().tabItem{Item(type: .view4, select: selection)}.tag(ItemType.view4.rawValue)
+                //https://juejin.cn/post/7130609032447918110
             }.navigationBarHidden(itemType.isNavigationBarHidden(selection: selection))
                 .navigationBarTitle(itemType.title,displayMode: .inline)
                 .navigationBarItems(trailing: itemType.navigationBarTrailingItems(selection: selection))
