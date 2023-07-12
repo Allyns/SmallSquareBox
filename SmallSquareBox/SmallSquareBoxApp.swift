@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct SmallSquareBoxApp: App {
     
-    @StateObject var viewModel:ViewModel=ViewModel()
+    @StateObject var viewModel:NoteViewModel=NoteViewModel()
     
     var body: some Scene {
         WindowGroup {

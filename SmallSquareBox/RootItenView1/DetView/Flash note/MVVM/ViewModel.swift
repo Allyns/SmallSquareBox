@@ -13,7 +13,7 @@ import Foundation
  我们创建一个ViewModel类，并遵循ObservableObject协议
  Published  订阅监听对象
  */
-class ViewModel:ObservableObject{
+class NoteViewModel:ObservableObject{
     //数据模型
     @Published var noteModeles=[NoteModel]()
     
@@ -45,7 +45,7 @@ class ViewModel:ObservableObject{
     
     //新增
     func addItem(time:String,title:String,content:String){
-        let newItem=NoteModel(time: time, title: time, content: content)
+        let newItem=NoteModel(time: time, title: title, content: content)
         noteModeles.append(newItem)
         saveItems()
     }

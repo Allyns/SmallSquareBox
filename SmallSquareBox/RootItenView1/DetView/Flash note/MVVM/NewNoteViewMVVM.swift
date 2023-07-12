@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct NewNoteViewMVVM: View {
-    @State var title:String=""
-    @State var isEditing=false
-    
-    @State var content:String=""
-    
-    @Binding var showNewNoteView: Bool
-    
-    @Binding var notItemData:[NoteItem]
-    
-    @State var showToast=false
-    @State var showToaseMessage:String=""
-    
+
+    //引入viewModel
+    @EnvironmentObject var viewModel:NoteViewModel
+    //单个数据
+    @State var notModel:NoteModel
+    //关闭弹窗
+    @Environment(\.presentationMode)var presentationMode
     
     var body: some View {
         NavigationView{
@@ -28,9 +23,9 @@ struct NewNoteViewMVVM: View {
                 titleInputView()
                 Divider()
                 contentView()
-            }.navigationBarTitle("新建笔记",displayMode: .inline)
+            }.navigationBarTitle(viewModel.isAdd ? "新建笔记" : "编辑笔记",displayMode: .inline)
             .navigationBarItems(leading: closeView(), trailing: saveView())
-            .toase(present: $showToast, message: $showToaseMessage,aligment: .center)
+            .toase(present: $viewModel.showToast, message: $viewModel.showToasMessage)
         }
     }
     
@@ -38,10 +33,10 @@ struct NewNoteViewMVVM: View {
     //内容输入
     func contentView()->some View{
         ZStack(alignment: .topLeading) {
-            TextEditor(text: $content)
+            TextEditor(text: viewModel.isAdd ? $viewModel.content : $notModel.content)
                 .font(.system(size: 16))
                 .padding()
-            if content==""{
+            if viewModel.isAdd ? (viewModel.content.isEmpty) : (notModel.content.isEmpty) {
                 Text("请输入内容")
                     .foregroundColor(Color(UIColor.placeholderText))
                     .padding(20)
@@ -51,8 +46,8 @@ struct NewNoteViewMVVM: View {
     
     //标题输入框
     func titleInputView()->some View{
-        TextField("请输入标题",text: $title,onEditingChanged: {changed in
-            self.isEditing=changed
+        TextField("请输入标题",text: viewModel.isAdd ? $viewModel.title : $notModel.title,onEditingChanged: {changed in
+            self.viewModel.isSearching=changed
         }).padding()
         
     }
@@ -60,7 +55,7 @@ struct NewNoteViewMVVM: View {
     //关闭按钮
     func closeView()->some View{
         Button(action:{
-            self.showNewNoteView=false
+            self.viewModel.showNewView=false
         }){
             Image(systemName: "xmark.circle.fill")
                 .font(.system(size: 16))
@@ -71,15 +66,28 @@ struct NewNoteViewMVVM: View {
     //保存按钮
     func saveView()->some View{
         Button(action:{
-            if isNull(text: title){
-                self.showToaseMessage="请输入标题"
-                self.showToast=true
-            }else if isNull(text: content){
-                self.showToaseMessage="请输入内容"
-                self.showToast=true
+            if viewModel.isAdd {
+                if viewModel.isTextEmpty(text: viewModel.title) {
+                    viewModel.showToast=true
+                    viewModel.showToasMessage="请输入标题"
+                } else if viewModel.isTextEmpty(text: viewModel.content){
+                    viewModel.showToast=true
+                    viewModel.showToasMessage="请输入内容"
+                }else{
+                    self.viewModel.addItem(time: viewModel.getCurrentTime(), title: viewModel.title, content: viewModel.content)
+                    self.presentationMode.wrappedValue.dismiss()
+                }
             }else{
-                addData(time: getCurrentTime(), title: title, content: content)
-                self.showNewNoteView=false
+                if viewModel.isTextEmpty(text: notModel.title) {
+                    viewModel.showToast=true
+                    viewModel.showToasMessage="请输入标题"
+                }else if viewModel.isTextEmpty(text: notModel.content){
+                    viewModel.showToast=true
+                    viewModel.showToasMessage="请输入内容"
+                }else{
+                    self.viewModel.editItem(item: notModel)
+                    self.presentationMode.wrappedValue.dismiss()
+                }
             }
         }){
          Text("完成")
@@ -87,29 +95,10 @@ struct NewNoteViewMVVM: View {
         }
     }
     
-    //新建笔记
-    func addData(time:String,title:String,content:String){
-        let data=NoteItem(time: time, title: title, content: content)
-        notItemData.append(data)
-    }
-    
-    // 获取当前系统时间
-    func getCurrentTime()->String{
-        let dateformatter=DateFormatter()
-        dateformatter.dateFormat="YY.MM.dd"
-        return dateformatter.string(from: Date())
-    }
-    
-    func isNull(text:String)->Bool{
-        if text==""{
-            return true
-        }
-        return false
-    }
 }
 
 struct NewNoteViewMVVM_Previews: PreviewProvider {
     static var previews: some View {
-        NewNoteViewMVVM(showNewNoteView: .constant(true),notItemData: .constant([]))
+        NewNoteViewMVVM(notModel: NoteModel(time: "", title: "", content: "")).environmentObject(NoteViewModel())
     }
 }
