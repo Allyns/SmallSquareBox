@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView1: View {
-    var itemMsg=[ItemMessage(image: "discover_game", name: "闪念笔记"),
-                 ItemMessage(image: "discover_miniprogram", name: "功能02"),
+    var itemMsg=[ItemMessage(image: "discover_game", name: "闪念笔记(ObservableObject)"),
+                 ItemMessage(image: "discover_miniprogram", name: "闪念笔记(MVVM)"),
                  ItemMessage(image: "discover_moment", name: "功能03"),
                  ItemMessage(image: "discover_nearby", name: "功能04"),
                  ItemMessage(image: "discover_qrcode", name: "功能05"),
@@ -42,7 +42,7 @@ struct ItemMessage:Identifiable{
         case 0:
             return AnyView(DetailsView01())
         case 1:
-            return AnyView(DetailsView02())
+            return AnyView(DetailsViewMVVM())
         case 2:
             return AnyView(DetailsView03())
         case 3:

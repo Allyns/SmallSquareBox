@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewNoteView: View {
+struct NewNoteViewMVVM: View {
     @State var title:String=""
     @State var isEditing=false
     
@@ -16,6 +16,9 @@ struct NewNoteView: View {
     @Binding var showNewNoteView: Bool
     
     @Binding var notItemData:[NoteItem]
+    
+    @State var showToast=false
+    @State var showToaseMessage:String=""
     
     
     var body: some View {
@@ -26,7 +29,8 @@ struct NewNoteView: View {
                 Divider()
                 contentView()
             }.navigationBarTitle("新建笔记",displayMode: .inline)
-                .navigationBarItems(leading: closeView(), trailing: saveView())
+            .navigationBarItems(leading: closeView(), trailing: saveView())
+            .toase(present: $showToast, message: $showToaseMessage,aligment: .center)
         }
     }
     
@@ -63,11 +67,20 @@ struct NewNoteView: View {
                 .foregroundColor(.gray)
         }
     }
+    
     //保存按钮
     func saveView()->some View{
         Button(action:{
-            addData(time: getCurrentTime(), title: title, content: content)
-            self.showNewNoteView=false
+            if isNull(text: title){
+                self.showToaseMessage="请输入标题"
+                self.showToast=true
+            }else if isNull(text: content){
+                self.showToaseMessage="请输入内容"
+                self.showToast=true
+            }else{
+                addData(time: getCurrentTime(), title: title, content: content)
+                self.showNewNoteView=false
+            }
         }){
          Text("完成")
                 .font(.system(size: 17))
@@ -86,10 +99,17 @@ struct NewNoteView: View {
         dateformatter.dateFormat="YY.MM.dd"
         return dateformatter.string(from: Date())
     }
+    
+    func isNull(text:String)->Bool{
+        if text==""{
+            return true
+        }
+        return false
+    }
 }
 
-struct NewNoteView_Previews: PreviewProvider {
+struct NewNoteViewMVVM_Previews: PreviewProvider {
     static var previews: some View {
-        NewNoteView(showNewNoteView: .constant(true),notItemData: .constant([]))
+        NewNoteViewMVVM(showNewNoteView: .constant(true),notItemData: .constant([]))
     }
 }

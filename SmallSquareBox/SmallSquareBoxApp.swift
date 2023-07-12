@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SmallSquareBoxApp: App {
+    
+    @StateObject var viewModel:ViewModel=ViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView().environmentObject(viewModel)
         }
     }
 }
