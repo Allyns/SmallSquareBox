@@ -21,7 +21,6 @@ struct RootView: View{
             HomeView3().tabItem{Item(type: .view3, select: selection)}
                     .tag(ItemType.view3.rawValue)
                 HomeView4().tabItem{Item(type: .view4, select: selection)}.tag(ItemType.view4.rawValue)
-                //https://juejin.cn/post/7130609032447918110
             }.navigationBarHidden(itemType.isNavigationBarHidden(selection: selection))
                 .navigationBarTitle(itemType.title,displayMode: .inline)
                 .navigationBarItems(trailing: itemType.navigationBarTrailingItems(selection: selection))
@@ -59,7 +58,7 @@ struct RootView: View{
             case .view1:return "‘小’程序"
             case .view2:return "界面2"
             case .view3:return "界面3"
-            case .view4:return "界面4"
+            case .view4:return "我的"
             }
         }
         

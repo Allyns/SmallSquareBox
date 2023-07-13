@@ -31,6 +31,15 @@ struct DetailsView07: View {
                 ruleListView()
             }
         }.navigationTitle("红绿灯")
+//        .navigationBarItems(leading: backToMineView)
+    }
+
+    // 返回上一页
+    private var backToMineView: some View {
+        Button(action: {}) {
+            Image(systemName: "arrow.backward")
+                .foregroundColor(.black)
+        }
     }
 
     // 规则列表
