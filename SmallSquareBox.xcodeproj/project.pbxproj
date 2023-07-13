@@ -32,6 +32,10 @@
 		914AD3752A5EBFAC0010DEF5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD3742A5EBFAC0010DEF5 /* ViewModel.swift */; };
 		914AD3792A5ECFB80010DEF5 /* DetailsView0MVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD3782A5ECFB80010DEF5 /* DetailsView0MVVM.swift */; };
 		914AD37B2A5ECFD00010DEF5 /* NewNoteViewMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AD37A2A5ECFD00010DEF5 /* NewNoteViewMVVM.swift */; };
+		9191B9E32A60229C000D772B /* MyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191B9E22A60229C000D772B /* MyMenu.swift */; };
+		9191B9E52A6022D3000D772B /* ColorHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191B9E42A6022D3000D772B /* ColorHexString.swift */; };
+		9191B9E82A602336000D772B /* ViewModelMyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191B9E72A602336000D772B /* ViewModelMyMenu.swift */; };
+		9191B9EA2A6026B5000D772B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191B9E92A6026B5000D772B /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		914AD3742A5EBFAC0010DEF5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		914AD3782A5ECFB80010DEF5 /* DetailsView0MVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView0MVVM.swift; sourceTree = "<group>"; };
 		914AD37A2A5ECFD00010DEF5 /* NewNoteViewMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewMVVM.swift; sourceTree = "<group>"; };
+		9191B9E22A60229C000D772B /* MyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenu.swift; sourceTree = "<group>"; };
+		9191B9E42A6022D3000D772B /* ColorHexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexString.swift; sourceTree = "<group>"; };
+		9191B9E72A602336000D772B /* ViewModelMyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelMyMenu.swift; sourceTree = "<group>"; };
+		9191B9E92A6026B5000D772B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,12 +219,12 @@
 		914AD3642A5D42AD0010DEF5 /* DetView */ = {
 			isa = PBXGroup;
 			children = (
+				9191B9E12A602285000D772B /* MyMenu */,
 				914AD36B2A5D53490010DEF5 /* Flash note */,
 				914AD3622A5D427F0010DEF5 /* DetailsView04.swift */,
 				914AD3602A5D42740010DEF5 /* DetailsView03.swift */,
 				914AD35E2A5D426A0010DEF5 /* DetailsView02.swift */,
 				914AD3652A5D43300010DEF5 /* DetailsView05.swift */,
-				914AD3672A5D43380010DEF5 /* DetailsView06.swift */,
 				914AD3692A5D43420010DEF5 /* DetailsView07.swift */,
 			);
 			path = DetView;
@@ -251,6 +259,18 @@
 				914AD36E2A5E52860010DEF5 /* NewNoteView.swift */,
 			);
 			path = ObservableObject;
+			sourceTree = "<group>";
+		};
+		9191B9E12A602285000D772B /* MyMenu */ = {
+			isa = PBXGroup;
+			children = (
+				914AD3672A5D43380010DEF5 /* DetailsView06.swift */,
+				9191B9E22A60229C000D772B /* MyMenu.swift */,
+				9191B9E42A6022D3000D772B /* ColorHexString.swift */,
+				9191B9E72A602336000D772B /* ViewModelMyMenu.swift */,
+				9191B9E92A6026B5000D772B /* LoadingView.swift */,
+			);
+			path = MyMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +408,8 @@
 				914AD3632A5D427F0010DEF5 /* DetailsView04.swift in Sources */,
 				914AD35F2A5D426A0010DEF5 /* DetailsView02.swift in Sources */,
 				914AD3592A5C316F0010DEF5 /* HomeView3.swift in Sources */,
+				9191B9EA2A6026B5000D772B /* LoadingView.swift in Sources */,
+				9191B9E82A602336000D772B /* ViewModelMyMenu.swift in Sources */,
 				914AD37B2A5ECFD00010DEF5 /* NewNoteViewMVVM.swift in Sources */,
 				914AD36A2A5D43420010DEF5 /* DetailsView07.swift in Sources */,
 				914AD35D2A5D31BD0010DEF5 /* DetailsView01.swift in Sources */,
@@ -398,8 +420,10 @@
 				914AD3752A5EBFAC0010DEF5 /* ViewModel.swift in Sources */,
 				914AD3612A5D42740010DEF5 /* DetailsView03.swift in Sources */,
 				914AD3732A5EBE7E0010DEF5 /* NoteModel.swift in Sources */,
+				9191B9E32A60229C000D772B /* MyMenu.swift in Sources */,
 				914AD36D2A5D900F0010DEF5 /* NoteItem.swift in Sources */,
 				914AD3682A5D43380010DEF5 /* DetailsView06.swift in Sources */,
+				9191B9E52A6022D3000D772B /* ColorHexString.swift in Sources */,
 				914AD3572A5C31660010DEF5 /* HomeView1.swift in Sources */,
 				914AD36F2A5E52860010DEF5 /* NewNoteView.swift in Sources */,
 				914AD3552A5C31520010DEF5 /* HomeView2.swift in Sources */,
