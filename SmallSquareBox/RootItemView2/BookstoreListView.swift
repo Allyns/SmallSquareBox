@@ -7,7 +7,6 @@
 
 
 import SwiftUI
-//import SDWebImageSwiftUI
 
 struct BookstoreListView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
@@ -17,16 +16,14 @@ struct BookstoreListView: View {
         GeometryReader { geometry in
             ScrollView {
                 LazyVStack(alignment: .leading) {
-//                    if let carousels = viewModel.carousels, horizontalSizeClass == .compact  {
-//                            TabView {
-//                                ForEach(carousels, id: \.imageUrl) { carousel in
-//                                    WebImage(url: URL(string: carousel.imageUrl)).placeholder {
-//                                        Rectangle().foregroundColor(ThemeColor.lightGray)
-//                                    }.resizable()
-//                                }
-//                            }.tabViewStyle(PageTabViewStyle()).aspectRatio(Drawing.carouselAspect, contentMode: .fill)
-//
-//                    }
+                    if let carousels = viewModel.carousels, horizontalSizeClass == .compact  {
+                            TabView {
+                                ForEach(carousels, id: \.imageUrl) { carousel in
+                                    Image(allImages[Int(arc4random()) % 24]).resizable()
+                                }
+                            }.tabViewStyle(PageTabViewStyle()).aspectRatio(Drawing.carouselAspect, contentMode: .fill)
+
+                    }
                     if let menus = viewModel.menus {
                         BookstoreMenuView(menus: menus)
                     }

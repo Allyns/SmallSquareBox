@@ -6,30 +6,15 @@
 //
 
 import SwiftUI
-//import SDWebImageSwiftUI
 
 struct Avatar: View {
     let url: String
     var size: CGFloat?
     
     var body: some View {
-//        let content = WebImage(url: URL(string: url)).resizable().clipShape(Circle())
-//        if let size = size {
-//            content.frame(width: size, height: size)
-//        } else {
-//            content
-//        }
-        Image("data_avatar10")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 60)
-            .clipShape(Circle())
-            .overlay(Circle().stroke(Color(.systemGray5), lineWidth: 1))
+        Image(allImages[Int(arc4random()) % 24]) .resizable().clipShape(Circle())
     }
 }
-
-
-
 
 
 struct Avatar_Previews: PreviewProvider {

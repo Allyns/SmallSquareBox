@@ -7,6 +7,7 @@
 
 
 import Foundation
+import SwiftUI
 
 extension Double {
     public func toStringAsFixed(_ fractionDigits: Int) -> String {

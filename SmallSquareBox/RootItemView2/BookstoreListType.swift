@@ -9,7 +9,7 @@
 import Foundation
 
 enum BookstoreListType: String {
-    case excellent = "https://api.npoint.io/6e59f3f93132f075126e"
+    case excellent = "https://api.npoint.io/c78d547f8e814a953010"
     case male = "https://api.npoint.io/c6111dc48169571ea649"
     case female = "https://api.npoint.io/608fabd06bddb3972948"
     case cartoon = "https://api.npoint.io/509612775140e9094c30"

@@ -48,10 +48,10 @@ struct RootView: View{
         
         var selectedImage:Image{
             switch self{
-            case .view1: return Image("root_tab_chat_selected")
-            case .view2: return Image("root_tab_contact_selected")
-            case .view3: return Image("root_tab_discover_selected")
-            case .view4: return Image("root_tab_me_selected")
+            case .view1: return Image("xinxi")
+            case .view2: return Image("lianxiren")
+            case .view3: return Image("faxian")
+            case .view4: return Image("wode")
             }
         }
         

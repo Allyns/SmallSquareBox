@@ -6,28 +6,18 @@
 //
 
 import SwiftUI
-//import SDWebImageSwiftUI
+
+
 
 struct BookCover: View {
     let url: String
-    var width: Double?
+    var width: CGFloat?
     
     var body: some View {
-//        let image = WebImage(url: URL(string: url)).placeholder {
-//            Rectangle().foregroundColor(ThemeColor.lightGray)
-//        }.resizable().aspectRatio(3/4, contentMode: .fit).clipped()
-//        if let width = width {
-//            image.frame(width: width)
-//        } else {
-//            image
-//        }
-        
-        Image("data_avatar10")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 60)
-            .clipShape(Circle())
-            .overlay(Circle().stroke(Color(.systemGray5), lineWidth: 1))
+        VStack{
+            Image(allImages[Int(arc4random()) % 24]).resizable().clipped().frame(width: width,height: width)
+         .aspectRatio(3/4, contentMode: .fit)
+        }
     }
 }
 

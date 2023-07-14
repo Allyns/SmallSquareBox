@@ -27,6 +27,10 @@ struct BookstorePage: View {
             TopBarView(titles: viewModel.list.map { $0.type.title() }, selection: $pageIndex)
         }.ignoresSafeArea()
     }
-    
+    /**
+          图片是随机获取本地图片，如果改成网络图片也很简单，修改ImageWithURL类，替换 Image(allImages[Int(arc4random()) % 24])即可
+     
+      
+     */
     
 }
