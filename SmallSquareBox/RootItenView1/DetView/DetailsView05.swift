@@ -17,7 +17,7 @@ struct DetailsView05: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            titleView()
+            titleView().padding(.top,30)
             HStack {
                 beforeMenuView()
                 afterMenuView()
