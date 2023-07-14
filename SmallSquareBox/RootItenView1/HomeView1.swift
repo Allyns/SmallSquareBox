@@ -18,17 +18,20 @@ struct HomeView1: View {
                  ItemMessage(image: "discover_see", name: "新国标红绿灯")]
     
     var body: some View {
-        List(itemMsg.indices,id:\.hashValue){index in
-            NavigationLink(destination:itemMsg[index].itemView(index:index)){
-                HStack{
-                    Image(itemMsg[index].image).resizable()
-                        .frame(width: 40,height: 40)
-                        .cornerRadius(5)
 
-                    Text(itemMsg[index].name).padding(10)
-                }.padding(2)
+            List(itemMsg.indices,id:\.hashValue){index in
+                NavigationLink(destination:itemMsg[index].itemView(index:index)){
+                    HStack{
+                        Image(itemMsg[index].image).resizable()
+                            .frame(width: 40,height: 40)
+                            .cornerRadius(5)
+
+                        Text(itemMsg[index].name).padding(10)
+                    }.padding(2)
+                }
             }
-        }
+
+   
     }
 }
 

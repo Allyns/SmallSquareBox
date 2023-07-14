@@ -10,19 +10,21 @@ import SwiftUI
 struct RootView: View{
     
    @State private var selection:Int=0
+    @State private var bookstoreVM = BookstoreViewModel()
     
     var body:some View{
     
         NavigationView{
             TabView(selection: $selection){
                 HomeView1().tabItem{Item(type: .view1, select:selection)}.tag(ItemType.view1.rawValue)
-                HomeView2().tabItem{Item(type: .view2, select: selection)}
+                BookstorePage(viewModel: bookstoreVM).tabItem{Item(type: .view2, select: selection)}
                     .tag(ItemType.view2.rawValue)
             HomeView3().tabItem{Item(type: .view3, select: selection)}
                     .tag(ItemType.view3.rawValue)
                 HomeView4().tabItem{Item(type: .view4, select: selection)}.tag(ItemType.view4.rawValue)
-            }.navigationBarHidden(itemType.isNavigationBarHidden(selection: selection))
-                .navigationBarTitle(itemType.title,displayMode: .inline)
+            }
+            .navigationBarHidden(itemType.isNavigationBarHidden(selection: selection))
+            .navigationBarTitle( itemType.title ,displayMode: .inline)
                 .navigationBarItems(trailing: itemType.navigationBarTrailingItems(selection: selection))
         }
         
@@ -56,15 +58,19 @@ struct RootView: View{
         var title:String{
             switch self{
             case .view1:return "‘小’程序"
-            case .view2:return "界面2"
-            case .view3:return "界面3"
+            case .view2:return "资讯"
+            case .view3:return "热榜"
             case .view4:return "我的"
             }
         }
         
         //设置隐藏顶部导航栏
         func isNavigationBarHidden(selection:Int)-> Bool{
-            selection == ItemType.view4.rawValue
+            if selection==1{
+                return selection == ItemType.view2.rawValue
+            }else{
+                return selection == ItemType.view4.rawValue
+            }
         }
         //设置顶部导航栏右边图标
         func navigationBarTrailingItems(selection:Int)->AnyView{
@@ -72,7 +78,7 @@ struct RootView: View{
             case .view1:
                 return AnyView(Image(systemName: "plus.circle"))
             case .view2:
-                return AnyView(Image(systemName: "person.badge.plus"))
+                return AnyView(EmptyView())
             case.view3:
                 return AnyView(EmptyView())
             case.view4:
