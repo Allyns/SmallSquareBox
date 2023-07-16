@@ -75,10 +75,10 @@ struct HomeView4: View {
                     .overlay(Circle().stroke(Color(.systemGray5), lineWidth: 1))
 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("文如秋雨")
+                    Text("Allyn")
                         .font(.system(size: 17))
                         .foregroundColor(.black)
-                    Text("高级产品经理")
+                    Text("前端开发")
                         .font(.system(size: 14))
                         .foregroundColor(.gray)
                 }
