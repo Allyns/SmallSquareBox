@@ -234,7 +234,7 @@
 		914AD31E2A5BE8420010DEF5 /* SmallSquareBox */ = {
 			isa = PBXGroup;
 			children = (
-				91B900712A63B50100DAB647 /* screenshot */,
+				91B900712A63B50100DAB647 /* Screenshot */,
 				91ADFF852A612E0A00A3922F /* Utility */,
 				91ADFF722A612D5200A3922F /* Widget */,
 				914AD3512A5C311D0010DEF5 /* RootItemView4 */,
@@ -425,7 +425,7 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		91B900712A63B50100DAB647 /* screenshot */ = {
+		91B900712A63B50100DAB647 /* Screenshot */ = {
 			isa = PBXGroup;
 			children = (
 				91B900722A63B55400DAB647 /* 1689484174338.gif */,
@@ -444,7 +444,7 @@
 				91B9007A2A63B55400DAB647 /* 2023-07-16 at 13.15.40.png */,
 				91B900742A63B55400DAB647 /* 2023-07-16 at 13.16.38.png */,
 			);
-			path = screenshot;
+			path = Screenshot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
