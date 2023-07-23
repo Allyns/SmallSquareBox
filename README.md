@@ -17,4 +17,4 @@
 | <img src="https://github.com/Allyns/SmallSquareBox/blob/main/SmallSquareBox/2023-07-16%20at%2013.15.34.png" width="208" height="404"> | <img src="https://github.com/Allyns/SmallSquareBox/blob/main/SmallSquareBox/2023-07-16%20at%2013.15.40.png" width="208" height="404"> | <img src="https://github.com/Allyns/SmallSquareBox/blob/main/SmallSquareBox/2023-07-16%20at%2013.16.38.png" width="208" height="404"> | 
 
 
-- [推荐文章](https://book.flutterchina.club/#%E7%AC%AC%E4%BA%8C%E7%89%88%E5%8F%98%E5%8C%96)
+- [知识点笔记](https://juejin.cn/post/7250736169277866041)
